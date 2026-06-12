@@ -19,6 +19,7 @@ rust-version = "1.88"
 default = ["full"]
 
 badge = []
+list = []
 card = []
 date_picker = ["chrono"]
 color_picker = ["iced_widget/canvas"]
@@ -174,6 +175,10 @@ required-features = ["labeled_frame"]
 [[example]]
 name = "custom_layout"
 required-features = ["labeled_frame"]
+
+[[example]]
+name = "list"
+required-features = ["list"]
 
 [lib]
 crate-type = ["cdylib", "rlib"]

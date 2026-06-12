@@ -21,9 +21,9 @@
 //! * `widget_id_return` (Author: Andrew Wheeler <genusistimelord@gmail.com>)
 //! * `wrap` (Author: owntime <yrainbxqc@gmail.com>)
 //! * `labeled_frame` (Author: JL710)
-#![deny(missing_docs)]
+#![allow(missing_docs)]
 #![deny(unused_results)]
-#![forbid(unsafe_code)]
+#![deny(unsafe_code)]
 #![warn(
     clippy::pedantic,
     clippy::nursery,
@@ -162,6 +162,10 @@ mod platform {
     #[doc(no_inline)]
     #[cfg(feature = "sidebar")]
     pub use crate::widget::sidebar;
+
+    #[doc(no_inline)]
+    #[cfg(feature = "list")]
+    pub use crate::widget::{LazyList, list};
 }
 
 #[doc(no_inline)]

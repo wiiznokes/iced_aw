@@ -388,3 +388,16 @@ where
 {
     crate::SelectionList::new(options, on_selected)
 }
+
+#[cfg(feature = "list")]
+/// Creates a new [`List`] with the provided [`Content`] and
+/// closure to view an item of the [`List`].
+///
+/// [`List`]: crate::List
+/// [`Content`]: crate::list::Content
+pub fn list<'a, T, Message, Theme, Renderer>(
+    content: &'a crate::list::Content<T>,
+    view_item: impl Fn(usize, &'a T) -> Element<'a, Message, Theme, Renderer> + 'a,
+) -> crate::LazyList<'a, T, Message, Theme, Renderer> {
+    crate::LazyList::new(content, view_item)
+}
